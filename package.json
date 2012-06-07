@@ -1,0 +1,11 @@
+{
+    "name" : "cf_mgnode",
+    "main" : "./cf_server.js",
+     "dependencies":{
+        "express":"",
+        "mongodb":"",
+    	"ejs":"",
+        "jsdoom":""
+      }
+}
+

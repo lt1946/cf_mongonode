@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>spider</title>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <script src="js/socket.js"></script>
+    <script src="js/jquery1.3.2.js"></script>
+    <script src="js/json2.js"></script>
+    <script>
+        var socket = io.connect('http://localhost:303');
+        socket.on('news', function (data) {
+          $("#news").text(data.hello);
+          socket.emit('my other event', { my: 'data' });
+        });
+        // 接收到公共消息
+		socket.on('public message', function( msg){
+			 $("#news").append(msg);
+		});
+        // 发送到公共消息
+        function send(){
+            if( $("#send").val()==''){
+                alert("请输入！")            
+                return;
+            }
+            socket.emit('public message',  $("#send").val(), function(ok){
+				if (ok) {
+                    $("#news").append(msg);
+					$('#status').text('send ok!');
+				}
+                else $('#status').text('send fail!');
+			});
+        }
+    </script>
+</head>
+<body>
+    <input id='send'><input type='button' value='send' onclick='send()'>
+    <span id='news'></span>
+    <span id='status'></span>
+</body>
+</html>

@@ -1,4 +1,16 @@
-cf_mongonode
-============
+# Fuck chat 
 
-mongonode run in cf 
+## Description
+
+chat in node
+
+## Install
+
+    $ npm install express ejs mysql
+    
+## Run
+    
+    $ node server.js
+    
+## Demo
+

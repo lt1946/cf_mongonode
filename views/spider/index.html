@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>spider</title>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+<script src='js/socket.js'>
+<script>
+  var socket = io.connect('http://localhost');
+  socket.on('news', function (data) {
+    console.log(data);
+    socket.emit('my other event', { my: 'data' });
+  });
+</script>
+
+</head>
+<body>
+    
+</body>
+</html>
