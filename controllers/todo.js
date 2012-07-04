@@ -20,7 +20,12 @@ exports.new = function(req, res, next) {
 exports.view = function(req, res, next) {
     res.redirect('/');
 };
-
+//跳转编辑页面
+//exports.toedit=function(req,res,next){
+//    if(err) return next(err);
+//    res.render('edit', {id: req.params.id});
+//}
+//编辑
 exports.edit = function(req, res, next) {
     var id = req.params.id;
     db.query('select * from todo where id=?', [id], function(err, rows) {

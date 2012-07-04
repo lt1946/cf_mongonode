@@ -1,6 +1,6 @@
-var ejs = require('ejs'),
-	express = require('express'),
-	csrf = require('../lib/csrf');
+var ejs = require('ejs');
+var	express = require('express');
+var	csrf = require('../lib/csrf');
 
 exports.port = (process.env.VMC_APP_PORT || 3003);
 exports.host = (process.env.VCAP_APP_HOST || 'localhost');
